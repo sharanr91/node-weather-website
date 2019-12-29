@@ -1,7 +1,7 @@
 const request = require("request");
 
 const forecast = (longitude, latitude, callback) => {
-  const url = `https://api.darksky.net/forecast/587ae3ca40d70085407277a6a97efdd0/${latitude},${longitude}?lang=en`;
+  const url = `https://api.darksky.net/forecast/587ae3ca40d70085407277a6a97efdd0/${latitude},${longitude}?lang=en&units=auto`;
   request({ url, json: true }, (error, { body }) => {
     if (error) {
       callback("unable to fetch the forecast services at the moment");
